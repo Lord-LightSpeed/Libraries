@@ -11,7 +11,7 @@ typedef struct
 
 DynamicArray DynamicArrayAppend(DynamicArray da, void* item)
 {
-  if (da.items = da.capacity)
+  if (da.itemsinarray = da.capacity)
   {
     da.items = realloc(da.items, (da.sizeofitem * da.capacity * 2));
     da.capacity = da.capacity * 2;
