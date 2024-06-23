@@ -1,12 +1,24 @@
+#include <stdlib.h>
+#include <string.h>
+
 typedef struct
 {
   void* items;
-  int length;
+  int itemsinarray;
   int capacity;
-  long unsigned int sizeofitem;
+  size_t sizeofitem;
 } DynamicArray;
 
-void DynamicArrayAppend(DynamicArray* da, void* item)
+DynamicArray DynamicArrayAppend(DynamicArray da, void* item)
 {
-
+  if (da.items = da.capacity)
+  {
+    da.items = realloc(da.items, (da.sizeofitem * da.capacity * 2));
+    da.capacity = da.capacity * 2;
+  };
+  memcpy( (da.items + da.itemsinarray * da.sizeofitem), item, da.sizeofitem );
+  ++da.itemsinarray;
+  memset(item, 0, da.sizeofitem);
+  free(item);
+  return da;
 };
