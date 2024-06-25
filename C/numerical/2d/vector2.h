@@ -38,14 +38,14 @@ const Vector2 Vector2MultiplyByFloat(Vector2 a, float b)
   return result;
 };
 
-const float GetLength(Vector2 a)
+const float GetLengthVec2(Vector2 a)
 {
   return sqrtf( (a.X + a.X) + (a.Y * a.Y) );
 };
 
-const float GetAngle(Vector2 a)
+const float GetAngleVec2(Vector2 a)
 {
-  float len = GetLength(a);
+  float len = GetLengthVec2(a);
   float signtheta = a.Y;
   if (signtheta >= 0)
   {
@@ -61,43 +61,3 @@ const float DotProduct(Vector2 a, Vector2 b)
 {
   return ((a.X * b.X) + (a.Y * b.Y));
 };
-
-#ifdef PolarCoordinate
-
-  const PolarCoordinate GetPolarFromVector(Vector2 a)
-  {
-    PolarCoordinate result;
-    result.Length = GetLength(a);
-    result.Angle = GetAngle(a);
-    return result;
-  };
-
-  const Vector2 GetVectorFromPolar(PolarCoordinate a)
-  {
-    Vector2 result;
-    result.X = a.Length * cosf(a.Angle);
-    result.Y = a.Length * sinf(a.Angle);
-    return result;
-  };
-
-#endif
-
-#ifdef Complex
-
-  const Complex GetComplexFromVector(Vector2 a)
-  {
-    Complex result;
-    result.Re = a.X;
-    result.Im = a.Y;
-    return result;
-  };
-  
-  const Vector2 GetVectorFromComplex(Complex a)
-  {
-    Vector2 result;
-    result.X = a.Re;
-    result.Y = a.Im;
-    return result;
-  };
-
-#endif
