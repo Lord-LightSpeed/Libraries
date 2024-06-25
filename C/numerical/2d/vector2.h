@@ -8,34 +8,38 @@ typedef struct
 
 const Vector2 Vector2Add(Vector2 a, Vector2 b)
 {
-  Vector2 result;
-  result.X = a.X + b.X;
-  result.Y = a.Y + b.Y;
-  return result;
+  return (Vector2)
+  {
+  .X = a.X + b.X,
+  .Y = a.Y + b.Y
+  };
 };
 
 const Vector2 Vector2Subtract(Vector2 a, Vector2 b)
 {
-  Vector2 result;
-  result.X = a.X - b.X;
-  result.Y = a.Y - b.Y;
-  return result;
+  return (Vector2)
+  {
+  .X = a.X - b.X,
+  .Y = a.Y - b.Y
+  };
 };
 
 const Vector2 Vector2DivideByFloat(Vector2 a, float b)
 {
-  Vector2 result;
-  result.X = a.X / b;
-  result.Y = a.Y / b;
-  return result;
+  return (Vector2)
+  {
+  .X = a.X / b,
+  .Y = a.Y / b
+  };
 };
 
 const Vector2 Vector2MultiplyByFloat(Vector2 a, float b)
 {
-  Vector2 result;
-  result.X = a.X * b;
-  result.Y = a.Y * b;
-  return result;
+  return (Vector2)
+  {
+  .X = a.X * b,
+  .Y = a.Y * b
+  };
 };
 
 const float GetLengthVec2(Vector2 a)

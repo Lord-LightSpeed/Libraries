@@ -8,34 +8,38 @@ typedef struct
 
 const Complex ComplexAdd(Complex a, Complex b)
 {
-  Complex result;
-  result.Re = a.Re + b.Re;
-  result.Im = a.Im + b.Im;
-  return result;
+  return (Complex)
+  {
+  .Re = a.Re + b.Re,
+  .Im = a.Im + b.Im
+  };
 };
 
 const Complex ComplexSubtract(Complex a, Complex b)
 {
-  Complex result;
-  result.Re = a.Re - b.Re;
-  result.Im = a.Im - b.Im;
-  return result;
+  return (Complex)
+  {
+  .Re = a.Re - b.Re,
+  .Im = a.Im - b.Im
+  };
 };
 
 const Complex ComplexMultiply(Complex a, Complex b)
 {
-  Complex result;
-  result.Re = (a.Re * b.Re) - (a.Im * b.Im);
-  result.Im = (a.Im * b.Re) + (a.Re * b.Im);
-  return result;
+  return (Complex)
+  {
+  .Re = (a.Re * b.Re) - (a.Im * b.Im),
+  .Im = (a.Im * b.Re) + (a.Re * b.Im)
+  };
 };
 
 const Complex ComplexConjugate(Complex a)
 {
-  Complex result;
-  result.Re = a.Re;
-  result.Im = - a.Im;
-  return result;
+  return (Complex)
+  {
+    .Re = a.Re,
+    .Im = - a.Im
+  };
 };
 
 const float ComplexConjugateMultiply(Complex a)
@@ -45,18 +49,20 @@ const float ComplexConjugateMultiply(Complex a)
 
 const Complex ComplexDivideByFloat(Complex a, float b)
 {
-  Complex result;
-  result.Re = a.Re / b;
-  result.Im = a.Im / b;
-  return result;
+  return (Complex)
+  {
+    .Re = a.Re / b,
+    .Im = a.Im / b
+  };
 };
 
 const Complex ComplexMultiplyByFloat(Complex a, float b)
 {
-  Complex result;
-  result.Re = a.Re * b;
-  result.Im = a.Im * b;
-  return result;
+  return (Complex)
+  {
+    .Re = a.Re * b,
+    .Im = a.Im * b
+  };
 };
 
 const float GetModulous(Complex a)
