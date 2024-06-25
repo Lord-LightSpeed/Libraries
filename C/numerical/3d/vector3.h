@@ -17,6 +17,26 @@ Vector3 Vec3Cross(Vector3 a, Vector3 b)
   };
 };
 
+Vector3 Vec3MultiplyByFloat(Vector3 a, float b)
+{
+  return (Vector3)
+  {
+    .X = a.X * b,
+    .Y = a.Y * b,
+    .Z = a.Z * b    
+  };
+};
+
+Vector3 Vec3DivideByFloat(Vector3 a, float b)
+{
+  return (Vector3)
+  {
+    .X = a.X / b,
+    .Y = a.Y / b,
+    .Z = a.Z / b    
+  };
+};
+
 float DotProduct(Vector3 a, Vector3 b)
 {
   return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
@@ -24,14 +44,7 @@ float DotProduct(Vector3 a, Vector3 b)
 
 Vector3 Normalise(Vector3 a)
 {
-  float isqr;
-  isqr = Q_rsqrt(a.X * a.X + a.Y * a.Y + a.Z * a.Z);
-  return (Vector3)
-  {
-    .X = a.X * isqr,
-    .Y = a.Y * isqr,
-    .Z = a.Z * isqr
-  };
+  return Vec3MultiplyByFloat(a, Q_rsqrt(a.X * a.X + a.Y * a.Y + a.Z * a.Z));
 };
 
 float Q_rsqrt(float number)
