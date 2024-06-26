@@ -6,7 +6,7 @@ typedef struct
   float Y;
 } Vector2;
 
-Vector2 Vector2Add(Vector2 a, Vector2 b)
+Vector2 Vec2Add(Vector2 a, Vector2 b)
 {
   return (Vector2)
   {
@@ -15,7 +15,7 @@ Vector2 Vector2Add(Vector2 a, Vector2 b)
   };
 };
 
-Vector2 Vector2Subtract(Vector2 a, Vector2 b)
+Vector2 Vec2Subtract(Vector2 a, Vector2 b)
 {
   return (Vector2)
   {
@@ -24,7 +24,7 @@ Vector2 Vector2Subtract(Vector2 a, Vector2 b)
   };
 };
 
-Vector2 Vector2DivideByFloat(Vector2 a, float b)
+Vector2 Vec2DivideByFloat(Vector2 a, float b)
 {
   return (Vector2)
   {
@@ -33,7 +33,7 @@ Vector2 Vector2DivideByFloat(Vector2 a, float b)
   };
 };
 
-Vector2 Vector2MultiplyByFloat(Vector2 a, float b)
+Vector2 Vec2MultiplyByFloat(Vector2 a, float b)
 {
   return (Vector2)
   {
@@ -61,14 +61,14 @@ float GetAngleVec2(Vector2 a)
   };
 };
 
-float DotProduct(Vector2 a, Vector2 b)
+float Vec2DotProduct(Vector2 a, Vector2 b)
 {
   return ((a.X * b.X) + (a.Y * b.Y));
 };
 
-Vector2 Vector2Normalise(Vector2 a)
+Vector2 Vec2Normalise(Vector2 a)
 {
-  return Vector2MultiplyByFloat(a, Q_rsqrt(a.X * a.X + a.Y * a.Y));
+  return Vec2MultiplyByFloat(a, Q_rsqrt(a.X * a.X + a.Y * a.Y));
 };
 
 float Q_rsqrt(float number)

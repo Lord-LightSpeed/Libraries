@@ -7,6 +7,26 @@ typedef struct
   float Z;
 } Vector3;
 
+Vector3 Vec3Add(Vector3 a, Vector3 b)
+{
+  return (Vector3)
+  {
+    .X = a.X + b.X,
+    .Y = a.Y + b.Y,
+    .Z = a.Z + b.Z,
+  };
+};
+
+Vector3 Vec3Subtract(Vector3 a, Vector3 b)
+{
+  return (Vector3)
+  {
+    .X = a.X - b.X,
+    .Y = a.Y - b.Y,
+    .Z = a.Z - b.Z,
+  };
+};
+
 Vector3 Vec3Cross(Vector3 a, Vector3 b)
 {
   return (Vector3)
@@ -37,12 +57,12 @@ Vector3 Vec3DivideByFloat(Vector3 a, float b)
   };
 };
 
-float DotProduct(Vector3 a, Vector3 b)
+float Vec3DotProduct(Vector3 a, Vector3 b)
 {
   return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
 };
 
-Vector3 Vector3Normalise(Vector3 a)
+Vector3 Vec3Normalise(Vector3 a)
 {
   return Vec3MultiplyByFloat(a, Q_rsqrt(a.X * a.X + a.Y * a.Y + a.Z * a.Z));
 };
