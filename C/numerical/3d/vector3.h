@@ -42,7 +42,7 @@ float DotProduct(Vector3 a, Vector3 b)
   return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
 };
 
-Vector3 Normalise(Vector3 a)
+Vector3 Vector3Normalise(Vector3 a)
 {
   return Vec3MultiplyByFloat(a, Q_rsqrt(a.X * a.X + a.Y * a.Y + a.Z * a.Z));
 };

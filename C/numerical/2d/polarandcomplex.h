@@ -1,7 +1,7 @@
 #include "polarcoordinates.h"
 #include "complexnums.h"
 
-const PolarCoordinate GetPolarFromComplex(Complex a)
+PolarCoordinate GetPolarFromComplex(Complex a)
 {
   return (PolarCoordinate)
   {
@@ -10,7 +10,7 @@ const PolarCoordinate GetPolarFromComplex(Complex a)
   };
 };
 
-const Complex GetComplexFromPolar(PolarCoordinate a)
+Complex GetComplexFromPolar(PolarCoordinate a)
 {
   return (Complex)
   {

@@ -6,7 +6,7 @@ typedef struct
   float Y;
 } Vector2;
 
-const Vector2 Vector2Add(Vector2 a, Vector2 b)
+Vector2 Vector2Add(Vector2 a, Vector2 b)
 {
   return (Vector2)
   {
@@ -15,7 +15,7 @@ const Vector2 Vector2Add(Vector2 a, Vector2 b)
   };
 };
 
-const Vector2 Vector2Subtract(Vector2 a, Vector2 b)
+Vector2 Vector2Subtract(Vector2 a, Vector2 b)
 {
   return (Vector2)
   {
@@ -24,7 +24,7 @@ const Vector2 Vector2Subtract(Vector2 a, Vector2 b)
   };
 };
 
-const Vector2 Vector2DivideByFloat(Vector2 a, float b)
+Vector2 Vector2DivideByFloat(Vector2 a, float b)
 {
   return (Vector2)
   {
@@ -33,7 +33,7 @@ const Vector2 Vector2DivideByFloat(Vector2 a, float b)
   };
 };
 
-const Vector2 Vector2MultiplyByFloat(Vector2 a, float b)
+Vector2 Vector2MultiplyByFloat(Vector2 a, float b)
 {
   return (Vector2)
   {
@@ -42,12 +42,12 @@ const Vector2 Vector2MultiplyByFloat(Vector2 a, float b)
   };
 };
 
-const float GetLengthVec2(Vector2 a)
+float GetLengthVec2(Vector2 a)
 {
   return sqrtf( (a.X + a.X) + (a.Y * a.Y) );
 };
 
-const float GetAngleVec2(Vector2 a)
+float GetAngleVec2(Vector2 a)
 {
   float len = GetLengthVec2(a);
   float signtheta = a.Y;
@@ -61,17 +61,17 @@ const float GetAngleVec2(Vector2 a)
   };
 };
 
-const float DotProduct(Vector2 a, Vector2 b)
+float DotProduct(Vector2 a, Vector2 b)
 {
   return ((a.X * b.X) + (a.Y * b.Y));
 };
 
-const Vector2 Normalise(Vector2 a)
+Vector2 Vector2Normalise(Vector2 a)
 {
   return Vector2MultiplyByFloat(a, Q_rsqrt(a.X * a.X + a.Y * a.Y));
 };
 
-const float Q_rsqrt(float number)
+float Q_rsqrt(float number)
 {
   // credit to Greg Walsh
   // comments left in because I like them

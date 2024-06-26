@@ -1,7 +1,7 @@
 #include "vector2.h"
 #include "polarcoordinates.h"
 
-const PolarCoordinate GetPolarFromVector(Vector2 a)
+PolarCoordinate GetPolarFromVector(Vector2 a)
 {
   return (PolarCoordinate)
   {
@@ -10,7 +10,7 @@ const PolarCoordinate GetPolarFromVector(Vector2 a)
   };
 };
 
-const Vector2 GetVectorFromPolar(PolarCoordinate a)
+Vector2 GetVectorFromPolar(PolarCoordinate a)
 {
   return (Vector2)
   {

@@ -1,7 +1,7 @@
 #include "vector2.h"
 #include "complexnums.h"
 
-const Complex GetComplexFromVector(Vector2 a)
+Complex GetComplexFromVector(Vector2 a)
 {
   return (Complex)
   {
@@ -10,7 +10,7 @@ const Complex GetComplexFromVector(Vector2 a)
   };
 };
   
-const Vector2 GetVectorFromComplex(Complex a)
+Vector2 GetVectorFromComplex(Complex a)
 {
   return (Vector2)
   {

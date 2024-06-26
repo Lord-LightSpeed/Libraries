@@ -6,7 +6,7 @@ typedef struct
   float Im;
 } Complex;
 
-const Complex ComplexAdd(Complex a, Complex b)
+Complex ComplexAdd(Complex a, Complex b)
 {
   return (Complex)
   {
@@ -15,7 +15,7 @@ const Complex ComplexAdd(Complex a, Complex b)
   };
 };
 
-const Complex ComplexSubtract(Complex a, Complex b)
+Complex ComplexSubtract(Complex a, Complex b)
 {
   return (Complex)
   {
@@ -24,7 +24,7 @@ const Complex ComplexSubtract(Complex a, Complex b)
   };
 };
 
-const Complex ComplexMultiply(Complex a, Complex b)
+Complex ComplexMultiply(Complex a, Complex b)
 {
   return (Complex)
   {
@@ -33,7 +33,7 @@ const Complex ComplexMultiply(Complex a, Complex b)
   };
 };
 
-const Complex ComplexConjugate(Complex a)
+Complex ComplexConjugate(Complex a)
 {
   return (Complex)
   {
@@ -42,12 +42,12 @@ const Complex ComplexConjugate(Complex a)
   };
 };
 
-const float ComplexConjugateMultiply(Complex a)
+float ComplexConjugateMultiply(Complex a)
 {
   return ((a.Re * a.Re) + (a.Im * a.Im));
 };
 
-const Complex ComplexDivideByFloat(Complex a, float b)
+Complex ComplexDivideByFloat(Complex a, float b)
 {
   return (Complex)
   {
@@ -56,7 +56,7 @@ const Complex ComplexDivideByFloat(Complex a, float b)
   };
 };
 
-const Complex ComplexMultiplyByFloat(Complex a, float b)
+Complex ComplexMultiplyByFloat(Complex a, float b)
 {
   return (Complex)
   {
@@ -65,12 +65,12 @@ const Complex ComplexMultiplyByFloat(Complex a, float b)
   };
 };
 
-const float GetModulous(Complex a)
+float GetModulous(Complex a)
 {
   return sqrtf( (a.Re + a.Re) + (a.Im * a.Im) );
 };
 
-const float GetArgument(Complex a)
+float GetArgument(Complex a)
 {
   float len = GetModulous(a);
   float signtheta = a.Im;
@@ -84,7 +84,7 @@ const float GetArgument(Complex a)
   };
 };
 
-const Complex ComplexDivide(Complex a, Complex b)
+Complex ComplexDivide(Complex a, Complex b)
 {
   return ComplexDivideByFloat( ( ComplexMultiply( a , ComplexConjugate( b ) ) ) , ComplexConjugateMultiply( b ) );
 };
