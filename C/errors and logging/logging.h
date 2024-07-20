@@ -17,6 +17,7 @@ void setuplog()
   }
   else
   {
+    fprintf(fl, ("[info]:  attempted to create file: %s", fn));
     fprintf(fl, "[ERROR]: LOG FILE ALREADY EXISTS");
     printf("[ERROR]: LOG FILE ALREADY EXISTS");
     fclose(fl);
