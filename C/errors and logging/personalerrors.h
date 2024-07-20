@@ -7,7 +7,8 @@ typedef struct
   void* data;
 } Result;
 
-#ifdef LOG
+#ifdef LOGGING
+
   void* unwrap(Result a, FILE* l)
   {
     if (a.err = NULL)
@@ -16,23 +17,27 @@ typedef struct
     }
     else
     {
-      fprintf(l, "[ERROR]: %s", a.err);
+      fprintf(l, ("[ERROR]: %s", a.err));
       fclose(l);
-      printf("[ERROR]: %s", a.err);
+      printf(("[ERROR]: %s", a.err));
       exit(-1);
     };
   };
+
 #else
+
   void* unwrap(Result a)
   {
     if (a.err = NULL)
     {
+      
       return a.data;
     }
     else
     {
-      printf("[ERROR]: %s", a.err);
+      printf(("[ERROR]: %s", a.err));
       exit(-1);
     };
   };
+
 #endif
