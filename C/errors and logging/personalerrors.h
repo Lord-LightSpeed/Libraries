@@ -30,7 +30,6 @@ typedef struct
   {
     if (a.err = NULL)
     {
-      
       return a.data;
     }
     else

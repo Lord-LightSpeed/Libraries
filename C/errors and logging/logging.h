@@ -3,43 +3,43 @@
 
 #define LOGGING
 
-FILE* fl;
+FILE* filelocation;
 
 void setuplog()
 {
   SYSTEMTIME t;
   GetLocalTime(&t);
-  char* fn;
-  fn = "LOG-%d-%d-%d-%d-%d-%d-%d.txt", t.wYear, t.wMonth, t.wDay, t.wHour, t.wMinute, t.wSecond, t.wMilliseconds;
-  if (fl = NULL)
+  char* filename;
+  filename = "LOG-%u-%u-%u-%u-%u-%u-%u.txt", t.wYear, t.wMonth, t.wDay, t.wHour, t.wMinute, t.wSecond, t.wMilliseconds;
+  if (filelocation = NULL)
   {
-    fl = fopen((fn), "a");
+    filelocation = fopen((filename), "a");
   }
   else
   {
-    fprintf(fl, ("[info]:  attempted to create file: %s", fn));
-    fprintf(fl, "[ERROR]: LOG FILE ALREADY EXISTS");
+    fprintf(filelocation, ("[info]:  attempted to create file: %s", filename));
+    fprintf(filelocation, "[ERROR]: LOG FILE ALREADY EXISTS");
     printf("[ERROR]: LOG FILE ALREADY EXISTS");
-    fclose(fl);
+    fclose(filelocation);
     exit(-1);
   };
 };
 
 void infolog(char* info)
 {
-  fprintf(fl, ("[INFO]:  %s", info));
+  fprintf(filelocation, ("[INFO]:  %s", info));
 };
 
 void errorlog(char* error)
 {
-  fprintf(fl, ("[ERROR]: %s", error));
+  fprintf(filelocation, ("[ERROR]: %s", error));
 };
 
 void endlog()
 {
-  if (fl != NULL)
+  if (filelocation != NULL)
   {
-    fclose(fl);
-    fl = NULL;
+    fclose(filelocation);
+    filelocation = NULL;
   };
 };
