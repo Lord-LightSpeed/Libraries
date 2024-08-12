@@ -35,6 +35,13 @@ void errorlog(char* error)
   fprintf(filelocation, ("[ERROR]: %s", error));
 };
 
+void fatalerror(char* error)
+{
+  errorlog(error);
+  endlog();
+  exit(-1);
+};
+
 void endlog()
 {
   if (filelocation != NULL)
