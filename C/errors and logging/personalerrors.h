@@ -11,7 +11,7 @@ typedef struct
 
   void* unwrap(Result a, FILE* l)
   {
-    if (a.err = NULL)
+    if (a.err == NULL)
     {
       return a.data;
     }
@@ -28,7 +28,7 @@ typedef struct
 
   void* unwrap(Result a)
   {
-    if (a.err = NULL)
+    if (a.err == NULL)
     {
       return a.data;
     }

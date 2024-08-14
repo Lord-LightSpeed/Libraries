@@ -11,7 +11,7 @@ void setuplog()
   GetLocalTime(&t);
   char* filename;
   filename = "LOG-%u-%u-%u-%u-%u-%u-%u.txt", t.wYear, t.wMonth, t.wDay, t.wHour, t.wMinute, t.wSecond, t.wMilliseconds;
-  if (filelocation = NULL)
+  if (filelocation == NULL)
   {
     filelocation = fopen((filename), "a");
   }

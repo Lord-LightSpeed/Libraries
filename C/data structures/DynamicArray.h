@@ -11,7 +11,7 @@ typedef struct
 
 void DynamicArrayAppend(DynamicArray* da, void* item)
 {
-  if (da->itemsinarray = da->capacity)
+  if (da->itemsinarray == da->capacity)
   {
     da->items = realloc(da->items, (da->sizeofitem * da->capacity * 2));
     da->capacity = da->capacity * 2;

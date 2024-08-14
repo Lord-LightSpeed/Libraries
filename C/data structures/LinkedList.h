@@ -33,7 +33,7 @@ void* Getitem(LinkedList l, int a)
     p = &((*p)->next);
     ++count;
   };
-  if (count = a)
+  if (count == a)
   {
     return (*p)->data;
   }
