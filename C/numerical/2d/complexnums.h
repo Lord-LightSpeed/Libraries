@@ -72,7 +72,7 @@ float GetModulous(Complex a)
 
 float GetArgument(Complex a)
 {
-  float len = GetModulous(a);
+  float len = sqrtf( (a.Re + a.Re) + (a.Im * a.Im) );
   float signtheta = a.Im;
   if (signtheta >= 0)
   {
